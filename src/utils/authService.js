@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const models = require('../models');
-import { AuthenticationError, UserInputError } from "apollo-server";
+import { AuthenticationError } from "apollo-server";
 
 
 module.exports = {
