@@ -12,25 +12,11 @@ import {
 const typeDefs = require('./typeDefs');
 
 
-const env = process.env.NODE_ENV || 'development';
-
 const baseTypeDefs = gql`
     scalar Date
     scalar Void
-    scalar MixedValue
     type Query
     type Mutation
-    enum Risk {
-        H
-        M
-        L
-    }
-    enum Significance {
-        H
-        M
-        L
-        N
-    }
 `
 
 const context = async ({ req }) => {
@@ -63,9 +49,9 @@ const server = new ApolloServer({
     context,
     introspection: true,
     playground: true,
-    debug: false,
+    debug: false
 })
 
-server.listen({ port: process.env.PORT || 4000, host: '0.0.0.0' }).then(({ url }) => {
+server.listen({ port: process.env.PORT || 4000, host: '127.0.0.1' }).then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`);
 });

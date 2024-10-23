@@ -6,7 +6,7 @@ const getAllProducts = async (root, { page = 1, perPage = 10 }) => {
     try {
         const products = await models.Product.findAndCountAll(
             paginate({}, { page, perPage }, {
-                sortField: "name",
+                sortField: "id",
                 sortOrder: "ASC",
             })
         );
