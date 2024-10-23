@@ -255,7 +255,13 @@ query getTotalSalesPerCategory {
 ```
 
 #### Description
-This query fetches the total sales for each product category. It returns a list of categories and the corresponding `total_sales` for each category.
+This query fetches the total sales for each product category. It returns a list of categories and the corresponding `total_sales` for each category. 
+
+The backend implementation uses Sequelize to perform the query. It involves:
+- Fetching all orders (`Order` model) and joining them with their associated products (`Product` model) using an alias (`product`).
+- Grouping the results by the `category` field from the `Product` model.
+- Using the SQL `SUM` function to calculate the total sales for each category by summing the `total_price` of the orders.
+- The result is returned as raw data for improved performance.
 
 **Authorization Required**: A valid "Bearer token" must be passed in the `Authorization` header for this query.
 
