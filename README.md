@@ -213,7 +213,7 @@ This mutation adds a new product to the catalog by accepting `name`, `category`,
 #### GraphQL Mutation
 
 ```graphql
-mutation updateProduct($id: ID!, $name: String!, $category: String!, $price: Float!) {
+mutation updateProduct($id: Int!, $name: String!, $category: String!, $price: Float!) {
   updateProduct(id: $id, name: $name, category: $category, price: $price) {
     id
     name
@@ -246,7 +246,7 @@ This mutation updates an existing product by accepting `id`, `name`, `category`,
 #### GraphQL Mutation
 
 ```graphql
-mutation deleteProduct($id: ID!) {
+mutation deleteProduct($id: Int!) {
   deleteProduct(id: $id)
 }
 ```
