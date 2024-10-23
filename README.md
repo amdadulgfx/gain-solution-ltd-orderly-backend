@@ -32,7 +32,7 @@ This project is a web application that demonstrates user authentication using JW
 4. Configure environment variables:
    Create a `.env` file in the root directory with the following variables:
    ```plaintext
-    NODE_ENV=development
+   NODE_ENV=development
    JWT_SECRET=secretworldstring  # Replace with a secure random string
    PORT=4000
    DB_HOST=<server>             # Replace with your database host
