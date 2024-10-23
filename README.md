@@ -54,6 +54,31 @@ This project is a web application that demonstrates user authentication using JW
 
 Navigate to `localhost:4000` and click on `Query your server` to try the queries and mutations 
 
+
+### JWT Authentication Implementation Overview
+
+This setup uses JWT (JSON Web Token) for user authentication in a GraphQL API.
+
+#### 1. **User Sign-Up Process**
+- **Password Hashing:** The user's password is securely hashed using `bcrypt` before being stored in the database.
+- **JWT Creation:** After the user is successfully created, a JWT is generated with the user's `id`, `email`, and `username`. The token is signed using a secret (`JWT_SECRET`) and is set to expire in 1 day.
+- **Response:** The token and the user's information (excluding the password) are returned, allowing the client to authenticate future requests.
+
+#### 2. **User Sign-In Process**
+- **Password Verification:** When a user signs in, their password is compared with the hashed password stored in the database using `bcrypt`.
+- **JWT Creation:** If the password matches, a new JWT is generated, including the user's details.
+- **Response:** The token and user details are returned to the client, enabling them to access protected routes.
+
+#### 3. **Token Validation**
+- **JWT Verification:** The token is verified using the secret (`JWT_SECRET`), and the user's information (like `id` and `email`) is extracted from it.
+- **User Lookup:** The system checks whether the user exists in the database. If the user is found, they are authenticated; otherwise, an authentication error is raised.
+
+#### Summary:
+- **JWT:** Provides secure, stateless authentication.
+- **Bcrypt:** Used for secure password hashing and comparison.
+- **Token Validation:** Ensures that only authenticated users can access protected routes. 
+
+
 ## Queries and Mutations
 
 ### **1. Sign Up User Mutation**
