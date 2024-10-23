@@ -21,10 +21,11 @@ This project is a web application that demonstrates user authentication using JW
    npm install
    ```
 3. Create Database:
-    Open SQL shell or run 
+    Open the SQL shell or run the commands below in the terminal.
     ```bash
      psql -U postgres 
     ```
+    Now create the database.
     ```sql
     CREATE DATABASE <database-name>;
     ```
