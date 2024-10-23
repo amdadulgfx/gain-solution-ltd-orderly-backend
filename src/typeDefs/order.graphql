@@ -1,0 +1,17 @@
+type Order {
+    id: Int!
+    user_id: Int!
+    product_id: Int!
+    quantity: Int!
+    total_price: Float!
+    order_date: Date!
+}
+
+type SalesPerCategory {
+    category: String!
+    total_sales: Float!
+}
+
+extend type Query {
+    getTotalSalesPerCategory: [SalesPerCategory!]!
+}

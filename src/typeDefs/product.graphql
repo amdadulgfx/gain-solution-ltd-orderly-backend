@@ -1,0 +1,30 @@
+type Product {
+    id: Int!
+    name: String!
+    category: String!
+    price: Float!
+}
+
+type ProductPage {
+  items: [Product!]!
+  totalCount: Int
+}
+
+extend type Query {
+    getAllProducts(page: Int!, perPage: Int!): ProductPage!
+}
+
+extend type Mutation {
+    addProduct(
+        name: String!
+        category: String!
+        price: Float!
+    ): Product!
+    updateProduct(
+        id: Int!
+        name: String!
+        category: String!
+        price: Float!
+    ): Product!
+    deleteProduct(id: Int!): String!
+}
