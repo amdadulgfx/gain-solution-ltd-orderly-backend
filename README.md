@@ -227,7 +227,7 @@ mutation updateProduct($id: Int!, $name: String!, $category: String!, $price: Fl
 
 ```json
 {
-  "id": 14,
+  "id": 10,
   "name": "Microwave Woven 3",
   "category": "Kitchen Appliances",
   "price": 59.99
@@ -255,7 +255,7 @@ mutation deleteProduct($id: Int!) {
 
 ```json
 {
-  "id": 14
+  "id": 10
 }
 ```
 
