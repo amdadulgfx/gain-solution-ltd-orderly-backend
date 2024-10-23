@@ -82,6 +82,12 @@ const deleteProduct = async (root, { id, name, category, price }, { }) => {
 
         const deletedProductRes = await models.sequelize.transaction(
             async (t) => {
+
+                await models.Order.destroy({
+                    where: { product_id: id },
+                    transaction: t
+                  });
+
                 await models.Product.destroy(
                     {
                         where: { id: id },
