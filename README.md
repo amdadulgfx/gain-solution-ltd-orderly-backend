@@ -52,7 +52,7 @@ This project is a web application that demonstrates user authentication using JW
    npm start
    ```
 
-Navigate to `localhost:4000` and click on 'Query your server' to try the queries and mutations 
+Navigate to `localhost:4000` and click on `Query your server` to try the queries and mutations 
 
 ## Queries and Mutations
 
@@ -202,7 +202,7 @@ mutation updateProduct($id: ID!, $name: String!, $category: String!, $price: Flo
 
 ```json
 {
-  "id": 143,
+  "id": 14,
   "name": "Microwave Woven 3",
   "category": "Kitchen Appliances",
   "price": 59.99
